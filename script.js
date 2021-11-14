@@ -75,3 +75,10 @@ function mealRecipeModal(meal){
     mealDetailsContent.innerHTML = html;
     mealDetailsContent.parentElement.classList.add('showRecipe');
 }
+
+if('serviceWorker'in navigator){
+    navigator.serviceWorker.register('./sw.js')
+    .then(reg=>console.log('Registro exitoso del SW',reg))
+    .catch(err=>console.warn('Error al tratar de registrar el SW',
+    err))
+}
